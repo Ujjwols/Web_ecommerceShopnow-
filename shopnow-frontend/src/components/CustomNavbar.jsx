@@ -33,8 +33,8 @@ function CustomNavbar() {
   };
 
   return (
-    <div className="CustomNavbar container-fluid m-0 p-0">
-      <Navbar color="primary" dark expand="md" className="p-3">
+    <div className="CustomNavbar container-fluid m-0 p-0" style={{ marginBottom: "20px" }}>
+      <Navbar color="success" dark expand="md" className="p-3">
         <NavbarBrand tag={ReactRouterNavLink} to="/home">
           <i className="fa-solid fa-bag-shopping fa-lg"></i> SHOP-NOW
         </NavbarBrand>
@@ -42,17 +42,32 @@ function CustomNavbar() {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>
             <NavItem>
-              <NavLink tag={ReactRouterNavLink} to="/home">
+              <NavLink
+                tag={ReactRouterNavLink}
+                to="/home"
+                activeClassName="active"
+                className="text-white"
+              >
                 HOME
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={ReactRouterNavLink} to="/about">
+              <NavLink
+                tag={ReactRouterNavLink}
+                to="/about"
+                activeClassName="active"
+                className="text-white"
+              >
                 ABOUT
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={ReactRouterNavLink} to="/products/category/0/ALL">
+              <NavLink
+                tag={ReactRouterNavLink}
+                to="/products/category/0/ALL"
+                activeClassName="active"
+                className="text-white"
+              >
                 PRODUCTS
               </NavLink>
             </NavItem>
@@ -61,7 +76,12 @@ function CustomNavbar() {
           <Nav className="ms-auto" navbar>
             {isUserLoggedIn && (
               <NavItem>
-                <NavLink tag={ReactRouterNavLink} to={"/profile"}>
+                <NavLink
+                  tag={ReactRouterNavLink}
+                  to={"/profile"}
+                  activeClassName="active"
+                  className="text-white"
+                >
                   PROFILE
                 </NavLink>
               </NavItem>
@@ -69,7 +89,12 @@ function CustomNavbar() {
 
             {isUserLoggedIn && (
               <NavItem>
-                <NavLink tag={ReactRouterNavLink} to={"/cart"}>
+                <NavLink
+                  tag={ReactRouterNavLink}
+                  to={"/cart"}
+                  activeClassName="active"
+                  className="text-white"
+                >
                   <i className="fa-solid fa-cart-shopping"></i>({" "}
                   {cartContextState} )
                 </NavLink>
@@ -78,27 +103,44 @@ function CustomNavbar() {
 
             {isUserLoggedIn && (
               <NavItem>
-                <NavLink tag={ReactRouterNavLink} to={"/orders"}>
+                <NavLink
+                  tag={ReactRouterNavLink}
+                  to={"/orders"}
+                  activeClassName="active"
+                  className="text-white"
+                >
                   MY-ORDERS
                 </NavLink>
               </NavItem>
             )}
             {isUserLoggedIn && (
               <NavItem>
-                <NavLink onClick={handleLogout}>LOGOUT</NavLink>
+                <NavLink onClick={handleLogout} className="text-white">
+                  LOGOUT
+                </NavLink>
               </NavItem>
             )}
 
             {!isUserLoggedIn && (
               <NavItem>
-                <NavLink tag={ReactRouterNavLink} to="/login">
+                <NavLink
+                  tag={ReactRouterNavLink}
+                  to="/login"
+                  activeClassName="active"
+                  className="text-white"
+                >
                   LOGIN
                 </NavLink>
               </NavItem>
             )}
             {!isUserLoggedIn && (
               <NavItem>
-                <NavLink tag={ReactRouterNavLink} to="/register">
+                <NavLink
+                  tag={ReactRouterNavLink}
+                  to="/register"
+                  activeClassName="active"
+                  className="text-white"
+                >
                   REGISTER
                 </NavLink>
               </NavItem>

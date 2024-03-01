@@ -3,33 +3,33 @@ import React, { useState } from "react";
 import BaseComponent from "../components/BaseComponent";
 import CarouselComponent from "../components/CarouselComponent";
 
-import ashley from "../images/brands/ashley.jpg";
-import samsung from "../images/brands/samsung.png";
-import oppo from "../images/brands/oppo.jpg";
-import godrej from "../images/brands/godrej.jpg";
-import steelcase from "../images/brands/steelcase.jpeg";
+import Rolex from "../images/brands/Rolex.png";
+import nike from "../images/brands/nike.png";
+import asus from "../images/brands/asus.jpg";
+import nin from "../images/brands/nin.png";
+import game from "../images/brands/game.png";
 import lego from "../images/brands/lego.png";
-import hp from "../images/brands/hp.jpg";
-import ciftoys from "../images/brands/ciftoys.png";
+import puma from "../images/brands/puma.jpg";
+import fan from "../images/brands/fan.png";
 
 import laptop from "../images/carousel/laptop.JPG";
-import galaxy from "../images/carousel/galaxy.JPG";
+import galaxy from "../images/carousel/galaxy.png";
 import techno from "../images/carousel/techno.JPG";
 import iphone from "../images/carousel/iphone.JPG";
 import oneplus from "../images/carousel/oneplus.JPG";
-import redmi from "../images/carousel/redmi.JPG";
+import redmi from "../images/carousel/redmi.jpg";
 
 function Home() {
   console.log("home.js rendered");
   const brandsImages = [
-    { id: 1, image: ashley, text: "ashley logo" },
-    { id: 2, image: oppo, text: "oppo logo" },
-    { id: 3, image: godrej, text: "godrej logo" },
-    { id: 4, image: steelcase, text: "steelcase logo" },
+    { id: 1, image: Rolex, text: "Rolex logo" },
+    { id: 2, image: asus, text: "asus logo" },
+    { id: 3, image: nin, text: "nin logo" },
+    { id: 4, image: game, text: "game logo" },
     { id: 5, image: lego, text: "lego logo" },
-    { id: 6, image: samsung, text: "samsung logo" },
-    { id: 7, image: hp, text: "hp logo" },
-    { id: 8, image: ciftoys, text: "ciftoys" },
+    { id: 6, image: nike, text: "nike logo" },
+    { id: 7, image: puma, text: "puma logo" },
+    { id: 8, image: fan, text: "fan " },
   ];
 
   const carouselitems1 = [
@@ -93,9 +93,9 @@ function Home() {
   return (
     <BaseComponent>
       <div className="Home" style={{minHeight:"500px"}}>
-        <div>
-          <h2 className="text-center fw-bold text-primary mt-3">WELCOME TO SHOP-NOW</h2>
-        </div>
+      <div>
+        <h2 className="text-center fw-bold text-primary mt-3" style={{color: "black"}}>WELCOME TO SHOP-NOW</h2>
+      </div>
         <div className="row" style={{marginLeft:"0px",marginRight:"0px"}}>
           <div className="col-md-6">
             <CarouselComponent items={carouselitems1} />

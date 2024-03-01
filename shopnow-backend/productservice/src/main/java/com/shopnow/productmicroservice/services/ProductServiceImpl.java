@@ -49,9 +49,31 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public Product updateProduct(Product product) {
-		return null;
+	public Product updateProduct(Product updatedProduct) {
+		Integer productId = updatedProduct.getPid();
+
+		// Check if the product exists in the database
+		Product existingProduct = productRepository.findById(productId)
+				.orElseThrow(() -> new CustomException("Product not found with id:" + productId, HttpStatus.NOT_FOUND));
+
+		// Update the existing product with the new values
+		existingProduct.setName(updatedProduct.getName());
+		existingProduct.setDescription(updatedProduct.getDescription());
+		existingProduct.setPrice(updatedProduct.getPrice());
+	
+		// If the category ID is provided, update the category of the product
+		if (updatedProduct.getCategory() != null) {
+			Category category = categoryRepository.findById(updatedProduct.getCategory().getCategoryid())
+					.orElseThrow(() -> new CustomException("Category not found with id:" + updatedProduct.getCategory().getCategoryid(), HttpStatus.NOT_FOUND));
+			existingProduct.setCategory(category);
+		}
+
+		// Save the updated product to the database
+		Product updated = productRepository.save(existingProduct);
+		
+		return updated;
 	}
+
 
 	@Override
 	public Product getProductById(Integer id) {

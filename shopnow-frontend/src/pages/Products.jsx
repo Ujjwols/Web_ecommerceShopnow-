@@ -59,7 +59,7 @@ function Products() {
       <div className="Products" style={{minHeight:"500px"}}>
         <Nav pills className="Category-Container m-1 p-1 border">
           <NavItem>
-            <NavLink tag={ReactRouterNavLink} to={"/products/category/0/ALL"}>
+            <NavLink tag={ReactRouterNavLink} to={"/products/category/0/ALL"} className="bg-green">
               ALL
             </NavLink>
           </NavItem>
